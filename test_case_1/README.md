@@ -41,4 +41,4 @@ This test case verifies the complete user registration flow on the Automation Ex
 ## Prerequisites
 - Browser installed
 - Internet connection
-- Access
+- Access to http://automationexercise.com

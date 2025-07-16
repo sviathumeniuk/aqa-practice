@@ -443,3 +443,4 @@ O:\Study\w\aqa_pracs\test_case_1\obj\Debug\net9.0\refint\test_case_1.dll
 O:\Study\w\aqa_pracs\test_case_1\obj\Debug\net9.0\test_case_1.pdb
 O:\Study\w\aqa_pracs\test_case_1\obj\Debug\net9.0\test_case_1.genruntimeconfig.cache
 O:\Study\w\aqa_pracs\test_case_1\obj\Debug\net9.0\ref\test_case_1.dll
+O:\Study\w\aqa_pracs\test_case_1\obj\Debug\net9.0\test_case_1.sourcelink.json

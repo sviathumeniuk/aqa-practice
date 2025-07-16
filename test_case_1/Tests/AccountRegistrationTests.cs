@@ -39,76 +39,76 @@ public class AccountRegistrationTests : PageTest
 
     private async Task NavigateToHomePage()
     {
-        await _homePage.NavigateToHomePageAsync(TestConstants.Urls.BaseUrl);
-        
-        var isHomePageVisible = await _homePage.IsHomePageContentVisibleAsync();
+        await this._homePage.NavigateToHomePageAsync(TestConstants.Urls.BaseUrl);
+
+        var isHomePageVisible = await this._homePage.IsHomePageContentVisibleAsync();
         Assert.That(isHomePageVisible, Is.True, "Home page should be visible.");
     }
 
     private async Task SignUpNewUser()
     {
-        await _homePage.ClickSignupLoginButtonAsync();
+        await this._homePage.ClickSignupLoginButtonAsync();
 
-        var isNewUserSignupVisible = await _authorizePage.IsNewUserSignupVisibleAsync();
+        var isNewUserSignupVisible = await this._authorizePage.IsNewUserSignupVisibleAsync();
         Assert.That(isNewUserSignupVisible, Is.True, "New User Signup label should be visible.");
 
-        await _authorizePage.FillNameAsync(TestConstants.Authentication.UserName);
-        await _authorizePage.FillEmailAsync(TestConstants.Authentication.UserEmail);
-        await _authorizePage.ClickSignupButtonAsync();
+        await this._authorizePage.FillNameAsync(TestConstants.Authentication.UserName);
+        await this._authorizePage.FillEmailAsync(TestConstants.Authentication.UserEmail);
+        await this._authorizePage.ClickSignupButtonAsync();
     }
 
     private async Task FillAccountInformation()
     {
-        var isEnterAccountInformationVisible = await _accountInformationPage.IsEnterAccountInformationVisibleAsync();
+        var isEnterAccountInformationVisible = await this._accountInformationPage.IsEnterAccountInformationVisibleAsync();
         Assert.That(isEnterAccountInformationVisible, Is.True, "Enter Account Information label should be visible.");
 
-        await _accountInformationPage.ClickTitleMrRadioButtonAsync();
-        await _accountInformationPage.FillPasswordAsync(TestConstants.Authentication.Password);
-        await _accountInformationPage.SelectDateOfBirthAsync(
+        await this._accountInformationPage.ClickTitleMrRadioButtonAsync();
+        await this._accountInformationPage.FillPasswordAsync(TestConstants.Authentication.Password);
+        await this._accountInformationPage.SelectDateOfBirthAsync(
             TestConstants.DateOfBirth.Day,
             TestConstants.DateOfBirth.Month,
             TestConstants.DateOfBirth.Year
         );
-        await _accountInformationPage.ClickNewsletterCheckboxAsync();
-        await _accountInformationPage.ClickSpecialOffersCheckboxAsync();
+        await this._accountInformationPage.ClickNewsletterCheckboxAsync();
+        await this._accountInformationPage.ClickSpecialOffersCheckboxAsync();
 
-        await _accountInformationPage.FillPersonalNameAsync(
+        await this._accountInformationPage.FillPersonalNameAsync(
             TestConstants.PersonalInfo.FirstName,
             TestConstants.PersonalInfo.LastName
         );
-        await _accountInformationPage.FillCompanyAsync(TestConstants.PersonalInfo.Company);
-        
-        await _accountInformationPage.FillAddressAsync(
+        await this._accountInformationPage.FillCompanyAsync(TestConstants.PersonalInfo.Company);
+
+        await this._accountInformationPage.FillAddressAsync(
             TestConstants.Address.Address1,
             TestConstants.Address.Address2
         );
-        await _accountInformationPage.SelectCountryAsync(TestConstants.Address.Country);
-        await _accountInformationPage.FillLocationDetailsAsync(
+        await this._accountInformationPage.SelectCountryAsync(TestConstants.Address.Country);
+        await this._accountInformationPage.FillLocationDetailsAsync(
             TestConstants.Address.State,
             TestConstants.Address.City,
             TestConstants.Address.ZipCode
         );
-        await _accountInformationPage.FillPhoneNumberAsync(TestConstants.PersonalInfo.PhoneNumber);
+        await this._accountInformationPage.FillPhoneNumberAsync(TestConstants.PersonalInfo.PhoneNumber);
 
-        await _accountInformationPage.ClickCreateAccountButtonAsync();
+        await this._accountInformationPage.ClickCreateAccountButtonAsync();
     }
 
     private async Task VerifyAccountCreatedAndLogin()
     {
-        var isAccountCreatedVisible = await _accountCreatedPage.IsAccountCreatedLabelVisibleAsync();
+        var isAccountCreatedVisible = await this._accountCreatedPage.IsAccountCreatedLabelVisibleAsync();
         Assert.That(isAccountCreatedVisible, Is.True, "Account Created label should be visible.");
 
-        await _accountCreatedPage.ClickContinueButtonAsync();
+        await this._accountCreatedPage.ClickContinueButtonAsync();
 
-        var isLoggedInLabelVisible = await _accountCreatedPage.IsLoggedInLabelVisibleAsync();
+        var isLoggedInLabelVisible = await this._accountCreatedPage.IsLoggedInLabelVisibleAsync();
         Assert.That(isLoggedInLabelVisible, Is.True, "Logged in label should be visible.");
     }
 
     private async Task DeleteAccount()
     {
-        await _accountCreatedPage.ClickDeleteAccountButtonAsync();
+        await this._accountCreatedPage.ClickDeleteAccountButtonAsync();
 
-        var isAccountDeleted = await _accountCreatedPage.IsDeleteAccountButtonVisibleAsync();
+        var isAccountDeleted = await this._accountCreatedPage.IsDeleteAccountButtonVisibleAsync();
         Assert.That(isAccountDeleted, Is.False, "Delete Account button should not be visible after account deletion.");
     }
 
