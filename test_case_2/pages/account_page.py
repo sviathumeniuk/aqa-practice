@@ -2,8 +2,8 @@ from playwright.sync_api import expect, Page
 
 class AccountPage:
 
-    LOGGED_IN_INDICATOR = "text=Logged in as"
-    DELETE_ACCOUNT_LINK = "a[href='/delete_account']"
+    LOGGED_IN_INDICATOR: str = "text=Logged in as"
+    DELETE_ACCOUNT_LINK: str = "a[href='/delete_account']"
 
     def __init__(self, page: Page):
         self.page = page

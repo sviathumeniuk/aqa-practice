@@ -3,9 +3,9 @@ from test_data.user_data import UserData
 
 class HomePage:
 
-    SIGNUP_LOGIN_LINK = "a[href='/login']"
-    BODY = "body"
-    TITLE = "Automation Exercise"
+    SIGNUP_LOGIN_LINK: str = "a[href='/login']"
+    BODY: str = "body"
+    TITLE: str = "Automation Exercise"
 
     def __init__(self, page: Page):
         self.page = page

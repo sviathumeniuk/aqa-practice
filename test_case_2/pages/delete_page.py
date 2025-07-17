@@ -2,7 +2,7 @@ from playwright.sync_api import Page, expect
 
 class DeletePage:
 
-    ACCOUNT_DELETED_HEADER = "h2:has-text('Account Deleted!')"
+    ACCOUNT_DELETED_HEADER: str = "h2:has-text('Account Deleted!')"
 
     def __init__(self, page: Page):
         self.page = page
